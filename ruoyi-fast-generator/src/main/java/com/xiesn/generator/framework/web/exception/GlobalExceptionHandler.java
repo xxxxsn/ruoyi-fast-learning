@@ -1,9 +1,8 @@
-package com.xiesn.learning.mybatis.framework.web.exception;
+package com.xiesn.generator.framework.web.exception;
 
-import com.xiesn.learning.mybatis.common.utils.ServletUtils;
-import com.xiesn.learning.mybatis.exception.DemoModeException;
-import com.xiesn.learning.mybatis.exception.ServiceException;
-import com.xiesn.learning.mybatis.framework.web.domain.AjaxResult;
+import com.xiesn.generator.common.utils.ServletUtils;
+import com.xiesn.generator.exception.ServiceException;
+import com.xiesn.generator.framework.web.domain.AjaxResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindException;
@@ -75,13 +74,5 @@ public class GlobalExceptionHandler {
         log.error(e.getMessage(), e);
         String message = e.getAllErrors().get(0).getDefaultMessage();
         return AjaxResult.error(message);
-    }
-
-    /**
-     * 演示模式异常
-     */
-    @ExceptionHandler(DemoModeException.class)
-    public AjaxResult handleDemoModeException(DemoModeException e) {
-        return AjaxResult.error("演示模式，不允许操作");
     }
 }
