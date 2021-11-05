@@ -1,0 +1,14 @@
+package com.xiesn.learning.mybatis;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+
+@SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })
+public class RuoyiFastMybatisApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(RuoyiFastMybatisApplication.class, args);
+    }
+
+}
