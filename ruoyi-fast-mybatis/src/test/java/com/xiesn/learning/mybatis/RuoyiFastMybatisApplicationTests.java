@@ -13,7 +13,7 @@ public class RuoyiFastMybatisApplicationTests {
     UserService UserService;
 
     @Test
-    public void test(){
+    public void test() {
     }
 
 }

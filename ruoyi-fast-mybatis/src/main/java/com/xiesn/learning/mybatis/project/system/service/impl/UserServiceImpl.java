@@ -1,13 +1,17 @@
 package com.xiesn.learning.mybatis.project.system.service.impl;
+
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+
 import javax.annotation.Resource;
+
 import com.xiesn.learning.mybatis.project.system.domain.User;
 import com.xiesn.learning.mybatis.project.system.mapper.UserMapper;
 import com.xiesn.learning.mybatis.project.system.service.UserService;
+
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     @Resource
     private UserMapper userMapper;
@@ -42,12 +46,10 @@ public class UserServiceImpl implements UserService{
         return userMapper.updateByPrimaryKey(record);
     }
 
-	@Override
-	public List<User> listByAll(User user){
-		 return userMapper.listByAll(user);
-	}
-
-
+    @Override
+    public List<User> listByAll(User user) {
+        return userMapper.listByAll(user);
+    }
 
 
 }
