@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xiesn.thymeleaf.project.system.mapper.UserMapper">
-    <resultMap id="BaseResultMap" type="com.xiesn.thymeleaf.project.system.domain.User">
+<mapper namespace="com.xiesn.thymeleaf.project.system.user.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.xiesn.thymeleaf.project.system.user.domain.User">
         <!--@mbg.generated-->
         <!--@Table sys_user-->
         <id column="user_id" jdbcType="BIGINT" property="userId"/>
@@ -45,7 +45,7 @@
         where user_id = #{userId,jdbcType=BIGINT}
     </delete>
     <insert id="insert" keyColumn="user_id" keyProperty="userId"
-            parameterType="com.xiesn.thymeleaf.project.system.domain.User" useGeneratedKeys="true">
+            parameterType="com.xiesn.thymeleaf.project.system.user.domain.User" useGeneratedKeys="true">
         <!--@mbg.generated-->
         insert into sys_user (dept_id, login_name, user_name,
         user_type, email, phonenumber,
@@ -63,7 +63,7 @@
         #{remark,jdbcType=VARCHAR})
     </insert>
     <insert id="insertSelective" keyColumn="user_id" keyProperty="userId"
-            parameterType="com.xiesn.thymeleaf.project.system.domain.User" useGeneratedKeys="true">
+            parameterType="com.xiesn.thymeleaf.project.system.user.domain.User" useGeneratedKeys="true">
         <!--@mbg.generated-->
         insert into sys_user
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -191,7 +191,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.xiesn.thymeleaf.project.system.domain.User">
+    <update id="updateByPrimaryKeySelective" parameterType="com.xiesn.thymeleaf.project.system.user.domain.User">
         <!--@mbg.generated-->
         update sys_user
         <set>
@@ -258,7 +258,7 @@
         </set>
         where user_id = #{userId,jdbcType=BIGINT}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.xiesn.thymeleaf.project.system.domain.User">
+    <update id="updateByPrimaryKey" parameterType="com.xiesn.thymeleaf.project.system.user.domain.User">
         <!--@mbg.generated-->
         update sys_user
         set dept_id = #{deptId,jdbcType=BIGINT},
